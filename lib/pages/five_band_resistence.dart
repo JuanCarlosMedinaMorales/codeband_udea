@@ -333,7 +333,7 @@ class _FiveBandResistenceState extends State<FiveBandResistence> {
   }// cambia el porcentaje
   void _onConverterButtonClicked(){
     setState(() {
-      Resistencia= (valor1 + valor2 + valor5) * valor3;
+      Resistencia= (valor1 + valor2 + valor3) * valor5;
     });
   }
 }

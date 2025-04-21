@@ -400,7 +400,7 @@ class _SixBandResistenceState extends State<SixBandResistence> {
   }// cambia el PPM
   void _onConverterButtonClicked(){
     setState(() {
-      Resistencia= (valor1 + valor2 + valor5) * valor3;
+      Resistencia= (valor1 + valor2 + valor3) * valor5;
     });
   }
 }
