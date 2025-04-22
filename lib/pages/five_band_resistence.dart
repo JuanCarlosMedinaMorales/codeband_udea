@@ -26,6 +26,12 @@ class _FiveBandResistenceState extends State<FiveBandResistence> {
   double valor4 = 0;
   double valor5 = 0;
   double percent = 0.1;
+  Color _Banda1 = Colors.transparent;
+  Color _Banda2 = Colors.transparent;
+  Color _Banda3 = Colors.transparent;
+  Color _Banda4 = Colors.transparent;
+  Color _Banda5 = Colors.transparent;
+  String cantidad = " ";
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +56,91 @@ class _FiveBandResistenceState extends State<FiveBandResistence> {
                       width: 150,
                       height: 150,
                     ),
-                    SizedBox(height: 16,),
+                    Stack(
+                      children: [
+                        Image.asset(
+                          'assets/images/BF.png',
+                          width: 150,
+                          height: 150,
+
+                        ),//imagen de resistencia
+                        Positioned(
+                          left: 21,
+                          top: 59,
+                          child: Container(
+                            width: 7,
+                            height: 33,
+                            decoration: BoxDecoration(
+                                color: _Banda1,
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                )
+                            ),
+                          ),
+                        ), //cuadrado donde se coloca el color de la banda 1
+                        Positioned(
+                          left: 37,
+                          top: 61,
+                          child: Container(
+                            width: 7,
+                            height: 27,
+                            decoration: BoxDecoration(
+                                color: _Banda2,
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                )
+                            ),
+                          ),
+                        ), //cuadrado donde se coloca el color de la banda 2
+                        Positioned(
+                          left: 54,
+                          top: 61,
+                          child: Container(
+                            width: 7,
+                            height: 27,
+                            decoration: BoxDecoration(
+                                color: _Banda3,
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                )
+                            ),
+                          ),
+                        ), //cuadrado donde se coloca el color de la banda 3
+                        Positioned(
+                          left: 70,
+                          top: 61,
+                          child: Container(
+                            width: 7,
+                            height: 27,
+                            decoration: BoxDecoration(
+                                color: _Banda5,
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                )
+                            ),
+                          ),
+                        ), //cuadrado donde se coloca el color de la banda 5
+                        Positioned(
+                          left: 109,
+                          top: 61,
+                          child: Container(
+                            width: 7,
+                            height: 27,
+                            decoration: BoxDecoration(
+                                color: _Banda4,
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                )
+                            ),
+                          ),
+                        ), //cuadrado donde se coloca el color de la banda 4
+                      ],
+                    ), // resistencia y sus colores
                     Row(
                       children: [
                         Expanded(
@@ -243,9 +333,9 @@ class _FiveBandResistenceState extends State<FiveBandResistence> {
                     ),//seleccionar el color 4
                     SizedBox(height: 20,),
                     Text(
-                      "El valor de la resistencia es $Resistencia Ohms $percent %",
+                      "El valor de la resistencia es $Resistencia$cantidad Ohms $percent %",
                       style: const TextStyle(
-                          fontSize: 30,
+                          fontSize: 25,
                           fontStyle: FontStyle.italic,
                           color: Colors.white
                       ),
@@ -269,6 +359,29 @@ class _FiveBandResistenceState extends State<FiveBandResistence> {
         _Color1= selectedValue;
         valor1= (100 * selectedValue.index).toDouble();
         _onConverterButtonClicked(); //calcula la resistencia
+        int indice = selectedValue.index;
+        switch(indice){
+          case 1:
+            _Banda1= Colors.brown;
+          case 2:
+            _Banda1= Colors.red;
+          case 3:
+            _Banda1= Colors.orange;
+          case 4:
+            _Banda1= Colors.yellow;
+          case 5:
+            _Banda1= Colors.green;
+          case 6:
+            _Banda1= Colors.blue;
+          case 7:
+            _Banda1= Colors.purple;
+          case 8:
+            _Banda1= Colors.grey;
+          case 9:
+            _Banda1= Colors.white;
+          default:
+            _Banda1 = Colors.transparent;
+        }
 
       });
     };
@@ -280,6 +393,31 @@ class _FiveBandResistenceState extends State<FiveBandResistence> {
       setState((){
         valor2= (10 * selectedValue.index).toDouble();
         _onConverterButtonClicked(); //calcula la resistencia
+        int indice = selectedValue.index;
+        switch(indice){
+          case 0:
+            _Banda2= Colors.black87;
+          case 1:
+            _Banda2= Colors.brown;
+          case 2:
+            _Banda2= Colors.red;
+          case 3:
+            _Banda2= Colors.orange;
+          case 4:
+            _Banda2= Colors.yellow;
+          case 5:
+            _Banda2= Colors.green;
+          case 6:
+            _Banda2= Colors.blue;
+          case 7:
+            _Banda2= Colors.purple;
+          case 8:
+            _Banda2= Colors.grey;
+          case 9:
+            _Banda2= Colors.white;
+          default:
+            _Banda2 = Colors.transparent;
+        }
       });
     };
 
@@ -288,8 +426,33 @@ class _FiveBandResistenceState extends State<FiveBandResistence> {
     if (selectedValue is Col){
       _Color3= selectedValue;
       setState((){
-        valor2= (selectedValue.index).toDouble();
+        valor3= (selectedValue.index).toDouble();
         _onConverterButtonClicked(); //calcula la resistencia
+        int indice = selectedValue.index;
+        switch(indice){
+          case 0:
+            _Banda3= Colors.black87;
+          case 1:
+            _Banda3= Colors.brown;
+          case 2:
+            _Banda3= Colors.red;
+          case 3:
+            _Banda3= Colors.orange;
+          case 4:
+            _Banda3= Colors.yellow;
+          case 5:
+            _Banda3= Colors.green;
+          case 6:
+            _Banda3= Colors.blue;
+          case 7:
+            _Banda3= Colors.purple;
+          case 8:
+            _Banda3= Colors.grey;
+          case 9:
+            _Banda3= Colors.white;
+          default:
+            _Banda3 = Colors.transparent;
+        }
       });
     };
   }//cambia el color seleccionado
@@ -301,12 +464,30 @@ class _FiveBandResistenceState extends State<FiveBandResistence> {
         if(indice<=4){
           valor5= pow(10,indice).toDouble();
         }else if(indice == 5){
-          valor3 = 0.1;
+          valor5 = 0.1;
         } else{
-          valor3 = 0.01;
+          valor5 = 0.01;
         }
 
         _onConverterButtonClicked(); //calcula la resistencia
+        switch(indice){
+          case 0:
+            _Banda5= Colors.black87;
+          case 1:
+            _Banda5= Colors.brown;
+          case 2:
+            _Banda5= Colors.red;
+          case 3:
+            _Banda5= Colors.orange;
+          case 4:
+            _Banda5= Colors.yellow;
+          case 5:
+            _Banda5= Colors.amber;
+          case 6:
+            _Banda5= Colors.white60;
+          default:
+            _Banda5 = Colors.transparent;
+        }
       });
     };
   }//cambia el color seleccionado
@@ -319,14 +500,19 @@ class _FiveBandResistenceState extends State<FiveBandResistence> {
         switch(indice){
           case 0:
             percent = 1;
+            _Banda4= Colors.brown;
           case 1:
             percent = 2;
+            _Banda4= Colors.red;
           case 2:
             percent = 5;
+            _Banda4= Colors.amber;
           case 3:
             percent = 10;
+            _Banda4= Colors.white54;
           default:
             percent = 0;
+            _Banda3 = Colors.transparent;
         }
       });
     };
@@ -334,6 +520,15 @@ class _FiveBandResistenceState extends State<FiveBandResistence> {
   void _onConverterButtonClicked(){
     setState(() {
       Resistencia= (valor1 + valor2 + valor3) * valor5;
+      if (Resistencia >= 1000 && Resistencia <= 1000000){
+        Resistencia=Resistencia/1000;
+        cantidad= "k";
+      } else if(Resistencia>=1000000){
+        Resistencia=Resistencia/1000000;
+        cantidad= "M";
+      } else {
+        cantidad= " ";
+      }
     });
   }
 }
